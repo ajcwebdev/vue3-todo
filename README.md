@@ -173,4 +173,22 @@ return {
 
 ## Add a button to delete a todo
 
+```html
+<button @click="removeTodo(todo)">
+  Remove Todo
+</button>
+```
+
+```javascript
+const removeTodo = (index) => {
+  todos.value.splice(index, 1)
+}
+
+return {
+  removeTodo,
+}
+```
+
+![07-add-a-button-to-delete-a-todo](./assets/07-add-a-button-to-delete-a-todo.jpg)
+
 ## Add a button to mark all todos as done

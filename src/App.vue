@@ -8,10 +8,20 @@
     <button>Submit Todo</button>
   </form>
   <ul>
-    <li v-for="todo in todos" v-bind:key="todo.id">
-      <h3 :class="{ done: todo.done }" @click="toggleDone(todo)">
+    <li
+      v-for="todo in todos"
+      v-bind:key="todo.id"
+      class="todo"
+    >
+      <h3
+        :class="{ done: todo.done }"
+        @click="toggleDone(todo)"
+      >
         {{todo.content}}
       </h3>
+      <button @click="removeTodo(todo)">
+        Remove Todo
+      </button>
     </li>
   </ul>
 </template>
@@ -37,17 +47,25 @@ export default {
       todo.done = !todo.done
     }
 
+    const removeTodo = (index) => {
+      todos.value.splice(index, 1)
+    }
+
     return {
       todos,
       newTodo,
       addNewTodo,
       toggleDone,
+      removeTodo,
     }
   }
 }
 </script>
 
 <style>
+.todo {
+  cursor: pointer;
+}
 .done {
   text-decoration: line-through;
 }
