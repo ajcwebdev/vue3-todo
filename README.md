@@ -109,6 +109,18 @@ function addNewTodo() {
 
 ## Create an array property for todos
 
+```javascript
+export default {
+  setup() {
+    const todos = ref([])
+
+    return {
+      todos,
+    }
+  }
+}
+```
+
 ## Push the new todo into the todos array, with done: false
 
 ## Show the todos in a list
