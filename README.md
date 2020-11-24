@@ -57,7 +57,7 @@ export default {
 ```javascript
 export default {
   setup() {
-    function addNewTodo() {
+    const addNewTodo = () => {
       console.log('form submitted!!')
     }
     return {
@@ -100,7 +100,7 @@ export default {
 ## Log the user input when the form is submitted
 
 ```javascript
-function addNewTodo() {
+const addNewTodo = () => {
   console.log(newTodo.value)
 }
 ```
@@ -124,12 +124,13 @@ export default {
 ## Push the new todo into the todos array
 
 ```javascript
-function addNewTodo() {
+const addNewTodo = () => {
   todos.value.push({
     id: Date.now(),
     done: false,
     content: newTodo.value,
   })
+  newTodo.value = ''
 }
 ```
 
