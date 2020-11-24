@@ -1,5 +1,6 @@
 <template>
   <h1>Vue 3 Todo App</h1>
+
   <form @submit.prevent="addNewTodo">
     <label>Create Todo</label>
     <br><br>
@@ -7,6 +8,11 @@
     <br><br>
     <button>Submit Todo</button>
   </form>
+
+  <button @click="markAllDone">
+    Mark All Done
+  </button>
+
   <ul>
     <li
       v-for="todo in todos"
@@ -51,12 +57,19 @@ export default {
       todos.value.splice(index, 1)
     }
 
+    const markAllDone = () => {
+      todos.value.forEach(
+        (todo) => todo.done = true
+      )
+    }
+
     return {
       todos,
       newTodo,
       addNewTodo,
       toggleDone,
       removeTodo,
+      markAllDone,
     }
   }
 }
