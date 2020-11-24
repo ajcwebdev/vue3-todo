@@ -9,13 +9,9 @@
   </form>
   <ul>
     <li v-for="todo in todos" v-bind:key="todo.id">
-<<<<<<< HEAD
       <h3 :class="{ done: todo.done }" @click="toggleDone(todo)">
         {{todo.content}}
       </h3>
-=======
-      <h3 @click="toggleDone(todo)">{{todo.content}}</h3>
->>>>>>> c9d0bdd18ea24dd246085df3a4f2a7fe5b69f761
     </li>
   </ul>
 </template>
