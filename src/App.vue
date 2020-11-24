@@ -9,7 +9,9 @@
   </form>
   <ul>
     <li v-for="todo in todos" v-bind:key="todo.id">
-      <h3 @click="toggleDone(todo)">{{todo.content}}</h3>
+      <h3 :class="{ done: todo.done }" @click="toggleDone(todo)">
+        {{todo.content}}
+      </h3>
     </li>
   </ul>
 </template>
@@ -46,9 +48,6 @@ export default {
 </script>
 
 <style>
-.todo {
-  cursor: pointer;
-}
 .done {
   text-decoration: line-through;
 }

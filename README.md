@@ -20,15 +20,6 @@ export default {
 
 }
 </script>
-
-<style>
-.todo {
-  cursor: pointer;
-}
-.done {
-  text-decoration: line-through;
-}
-</style>
 ```
 
 ## Create New Todo Form
@@ -105,7 +96,7 @@ const addNewTodo = () => {
 }
 ```
 
-![04-log-the-user-input-when-the-form-is-submitted.jpg](./assets/04-log-the-user-input-when-the-form-is-submitted.jpg)
+![04-log-the-user-input-when-the-form-is-submitted](./assets/04-log-the-user-input-when-the-form-is-submitted.jpg)
 
 ## Create an array property for todos
 
@@ -147,7 +138,38 @@ const addNewTodo = () => {
 ![05-show-the-todos-in-a-list](./assets/05-show-the-todos-in-a-list.jpg)
 
 ## Check done on a todo to mark it as done
+
+```html
+<h3 @click="toggleDone(todo)">{{todo.content}}</h3>
+```
+
+```javascript
+const toggleDone = (todo) => {
+  todo.done = !todo.done
+}
+
+return {
+  toggleDone,
+}
+```
+
 ### Show a line through the todo text
+
+```html
+<style>
+.done {
+  text-decoration: line-through;
+}
+</style>
+```
+
+```html
+<h3 :class="{ done: todo.done }" @click="toggleDone(todo)">
+  {{todo.content}}
+</h3>
+```
+
+![06-show-a-line-through-the-todo-text](./assets/06-show-a-line-through-the-todo-text.jpg)
 
 ## Add a button to delete a todo
 
