@@ -91,6 +91,12 @@ export default {
 
 ### Watch the property change as we type in the input
 
+```html
+<h2>{{newTodo}}</h2>
+```
+
+![03-watch-the-property-change-as-we-type-in-the-input](./assets/03-watch-the-property-change-as-we-type-in-the-input.jpg)
+
 ## Log the user input when the form is submitted
 
 ## Create an array property for todos

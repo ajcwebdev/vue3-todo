@@ -7,6 +7,7 @@
     <br><br>
     <button>Submit Todo</button>
   </form>
+  <h2>{{newTodo}}</h2>
 </template>
 
 <script>
