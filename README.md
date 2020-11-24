@@ -121,7 +121,16 @@ export default {
 }
 ```
 
-## Push the new todo into the todos array, with done: false
+## Push the new todo into the todos array
+
+```javascript
+function addNewTodo() {
+  todos.value.push({
+    done: false,
+    content: newTodo.value,
+  })
+}
+```
 
 ## Show the todos in a list
 
