@@ -9,7 +9,7 @@
   </form>
   <ul>
     <li v-for="todo in todos" v-bind:key="todo.id">
-      <h3>{{todo.content}}</h3>
+      <h3 @click="toggleDone(todo)">{{todo.content}}</h3>
     </li>
   </ul>
 </template>
@@ -22,18 +22,24 @@ export default {
     const newTodo = ref('')
     const todos = ref([])
 
-    function addNewTodo() {
+    const addNewTodo = () => {
       todos.value.push({
         id: Date.now(),
         done: false,
         content: newTodo.value,
       })
+      newTodo.value = ''
+    }
+
+    const toggleDone = (todo) => {
+      todo.done = !todo.done
     }
 
     return {
       todos,
       newTodo,
       addNewTodo,
+      toggleDone,
     }
   }
 }
