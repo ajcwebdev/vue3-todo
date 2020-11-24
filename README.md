@@ -70,6 +70,25 @@ export default {
 ![02-call-a-function-when-the-form-is-submitted](./assets/02-call-a-function-when-the-form-is-submitted.jpg)
 
 ## Create a string property to store the user input
+
+```javascript
+import { ref } from 'vue'
+
+export default {
+  setup() {
+    const newTodo = ref('');
+
+    return {
+      newTodo,
+    }
+  }
+}
+```
+
+```html
+<input v-model="newTodo" name="newTodo">
+```
+
 ### Watch the property change as we type in the input
 
 ## Log the user input when the form is submitted
