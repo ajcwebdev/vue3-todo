@@ -36,10 +36,10 @@ export default {
 ```html
 <template>
   <h1>Vue 3 Todo App</h1>
-  <form>
+  <form @submit="addNewTodo">
     <label>Create Todo</label>
     <br><br>
-    <input>
+    <input name="newTodo">
     <br><br>
     <button>Submit Todo</button>
   </form>
@@ -49,6 +49,25 @@ export default {
 ![01-create-new-todo-form](./assets/01-create-new-todo-form.jpg)
 
 ## Call a function when the form is submitted
+
+```html
+<form @submit.prevent="addNewTodo">
+```
+
+```javascript
+export default {
+  setup() {
+    function addNewTodo() {
+      console.log('form submitted!!')
+    }
+    return {
+      addNewTodo,
+    }
+  }
+}
+```
+
+![02-call-a-function-when-the-form-is-submitted](./assets/02-call-a-function-when-the-form-is-submitted.jpg)
 
 ## Create a string property to store the user input
 ### Watch the property change as we type in the input

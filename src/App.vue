@@ -1,9 +1,9 @@
 <template>
   <h1>Vue 3 Todo App</h1>
-  <form>
+  <form @submit.prevent="addNewTodo">
     <label>Create Todo</label>
     <br><br>
-    <input>
+    <input name="newTodo">
     <br><br>
     <button>Submit Todo</button>
   </form>
@@ -11,7 +11,14 @@
 
 <script>
 export default {
-
+  setup() {
+    function addNewTodo() {
+      console.log('form submitted!!')
+    }
+    return {
+      addNewTodo,
+    }
+  }
 }
 </script>
 
