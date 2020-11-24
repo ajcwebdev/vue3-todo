@@ -1,9 +1,11 @@
 # vue3-todo
 
+This project is based on the excellent video [Intro to Vue 3 + Composition API: Build a Todo App](https://www.youtube.com/watch?v=rncY1tlWShM) by [Coding Garden with CJ](https://www.youtube.com/channel/UCLNgu_OupwoeESgtab33CCw).
+
 ## Setup
 
 ```
-vue3-todo create todo
+vue create vue3-todo
 cd vue3-todo
 yarn serve
 ```
@@ -43,6 +45,8 @@ export default {
   </form>
 </template>
 ```
+
+![01-create-new-todo-form](./assets/01-create-new-todo-form.jpg)
 
 ## Call a function when the form is submitted
 
