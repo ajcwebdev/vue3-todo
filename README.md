@@ -99,6 +99,14 @@ export default {
 
 ## Log the user input when the form is submitted
 
+```javascript
+function addNewTodo() {
+  console.log(newTodo.value)
+}
+```
+
+![04-log-the-user-input-when-the-form-is-submitted.jpg](./assets/04-log-the-user-input-when-the-form-is-submitted.jpg)
+
 ## Create an array property for todos
 
 ## Push the new todo into the todos array, with done: false

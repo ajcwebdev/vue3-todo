@@ -7,7 +7,6 @@
     <br><br>
     <button>Submit Todo</button>
   </form>
-  <h2>{{newTodo}}</h2>
 </template>
 
 <script>
@@ -18,7 +17,7 @@ export default {
     const newTodo = ref('');
 
     function addNewTodo() {
-      console.log('form submitted!!')
+      console.log(newTodo.value)
     }
     return {
       newTodo,
