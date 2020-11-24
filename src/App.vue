@@ -7,6 +7,11 @@
     <br><br>
     <button>Submit Todo</button>
   </form>
+  <ul>
+    <li v-for="todo in todos" v-bind:key="todo.id">
+      <h3>{{todo.content}}</h3>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -19,11 +24,12 @@ export default {
 
     function addNewTodo() {
       todos.value.push({
+        id: Date.now(),
         done: false,
         content: newTodo.value,
       })
     }
-    
+
     return {
       todos,
       newTodo,

@@ -126,6 +126,7 @@ export default {
 ```javascript
 function addNewTodo() {
   todos.value.push({
+    id: Date.now(),
     done: false,
     content: newTodo.value,
   })
@@ -133,6 +134,16 @@ function addNewTodo() {
 ```
 
 ## Show the todos in a list
+
+```html
+<ul>
+  <li v-for="todo in todos" v-bind:key="todo.id">
+    <h3>{{todo.content}}</h3>
+  </li>
+</ul>
+```
+
+![05-show-the-todos-in-a-list](./assets/05-show-the-todos-in-a-list.jpg)
 
 ## Check done on a todo to mark it as done
 ### Show a line through the todo text
