@@ -217,3 +217,23 @@ return {
 ```
 
 ![08-add-a-button-to-mark-all-todos-as-done](./assets/08-add-a-button-to-mark-all-todos-as-done.jpg)
+
+## Add a button to remove all todos
+
+```html
+<button @click="removeAllTodos">
+  Remove All
+</button>
+```
+
+```javascript
+const removeAllTodos = () => {
+  todos.value = []
+}
+
+return {
+  removeAllTodos,
+}
+```
+
+![09-add-a-button-to-remove-all-todos](./assets/09-add-a-button-to-remove-all-todos.jpg)

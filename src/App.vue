@@ -7,8 +7,13 @@
     <input v-model="newTodo" name="newTodo">
     <br><br>
     <button>Submit Todo</button>
+    <br><br>
   </form>
 
+  <button @click="removeAllTodos">
+    Remove All
+  </button>
+  <br><br>
   <button @click="markAllDone">
     Mark All Done
   </button>
@@ -63,6 +68,10 @@ export default {
       )
     }
 
+    const removeAllTodos = () => {
+      todos.value = []
+    }
+
     return {
       todos,
       newTodo,
@@ -70,6 +79,7 @@ export default {
       toggleDone,
       removeTodo,
       markAllDone,
+      removeAllTodos,
     }
   }
 }
