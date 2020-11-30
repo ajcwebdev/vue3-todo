@@ -276,12 +276,16 @@ export default {
 }
 ```
 
+![00-01-faunaResponse](./assets/00-01-faunaResponse.jpg)
+
 ## Set postTitle to res.data.title
 
 ```javascript
 const postTitle = faunaResponse.then(res => res.data.title)
 console.log("postTitle: ", '\n', '\n', postTitle)
 ```
+
+![00-02-postTitle](./assets/00-02-postTitle.jpg)
 
 ## Import ref
 
@@ -296,12 +300,16 @@ const postTitleRef = ref(postTitle)
 console.log("postTitleRef: ", '\n', '\n', postTitleRef)
 ```
 
+![00-03-postTitleRef](./assets/00-03-postTitleRef.jpg)
+
 ## Set postTitleValue with postTitleRef.value
 
 ```javascript
 const postTitleValue = postTitleRef.value
 console.log("postTitleValue: ", '\n', '\n', postTitleValue)
 ```
+
+![00-04-postTitleValue](./assets/00-04-postTitleValue.jpg)
 
 ## Final
 
