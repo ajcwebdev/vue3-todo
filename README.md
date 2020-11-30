@@ -28,7 +28,7 @@ export default {
 ```html
 <template>
   <h1>Vue 3 Todo App</h1>
-  <form @submit="addNewTodo">
+  <form>
     <label>Create Todo</label>
     <br><br>
     <input name="newTodo">
