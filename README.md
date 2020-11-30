@@ -183,45 +183,6 @@ return {
 }
 ```
 
-## Add a button to mark all todos as done
-
-```html
-<button @click="markAllDone">
-  Mark All Done
-</button>
-```
-
-```javascript
-const markAllDone = () => {
-  todos.value.forEach(
-    (todo) => todo.done = true
-  )
-}
-
-return {
-  markAllDone,
-}
-```
-
-## Add a button to remove all todos
-
-```html
-<button @click="removeAllTodos">
-  Remove All
-</button>
-```
-
-```javascript
-const removeAllTodos = () => {
-  todos.value = []
-}
-
-return {
-  removeAllTodos,
-}
-```
-
-
 # vue3-todo with pictures
 
 This project is based on the excellent video [Intro to Vue 3 + Composition API: Build a Todo App](https://www.youtube.com/watch?v=rncY1tlWShM) by [Coding Garden with CJ](https://www.youtube.com/channel/UCLNgu_OupwoeESgtab33CCw).
@@ -420,45 +381,3 @@ return {
 ```
 
 ![07-add-a-button-to-delete-a-todo](./assets/07-add-a-button-to-delete-a-todo.jpg)
-
-## Add a button to mark all todos as done
-
-```html
-<button @click="markAllDone">
-  Mark All Done
-</button>
-```
-
-```javascript
-const markAllDone = () => {
-  todos.value.forEach(
-    (todo) => todo.done = true
-  )
-}
-
-return {
-  markAllDone,
-}
-```
-
-![08-add-a-button-to-mark-all-todos-as-done](./assets/08-add-a-button-to-mark-all-todos-as-done.jpg)
-
-## Add a button to remove all todos
-
-```html
-<button @click="removeAllTodos">
-  Remove All
-</button>
-```
-
-```javascript
-const removeAllTodos = () => {
-  todos.value = []
-}
-
-return {
-  removeAllTodos,
-}
-```
-
-![09-add-a-button-to-remove-all-todos](./assets/09-add-a-button-to-remove-all-todos.jpg)
