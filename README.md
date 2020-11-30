@@ -183,6 +183,114 @@ return {
 }
 ```
 
+## Beginning
+
+```html
+<template>
+  <h1>Composition API</h1>
+</template>
+
+<script>
+export default {
+  setup() {
+
+  }
+}
+</script>
+```
+
+## Add Fauna Query
+
+```javascript
+const faunadb = require('faunadb');
+
+export const client = new faunadb.Client({ secret: 'FAUNA_KEY' })
+
+const { Get, Ref, Collection } = faunadb.query;
+
+export default {
+  setup() {
+    const faunaResponse = client.query(
+      Get(
+        Ref(
+          Collection('Post'), '282918878459200013'
+        )
+      )
+    )
+    console.log("faunaResponse: ", '\n', '\n', faunaResponse)
+  }
+}
+```
+
+## Set postTitle to res.data.title
+
+```javascript
+const postTitle = faunaResponse.then(res => res.data.title)
+console.log("postTitle: ", '\n', '\n', postTitle)
+```
+
+## Import ref
+
+```javascript
+import { ref } from 'vue'
+```
+
+## Set postTitle to postTitleRef with ref
+
+```javascript
+const postTitleRef = ref(postTitle)
+console.log("postTitleRef: ", '\n', '\n', postTitleRef)
+```
+
+## Set postTitleValue with postTitleRef.value
+
+```javascript
+const postTitleValue = postTitleRef.value
+console.log("postTitleValue: ", '\n', '\n', postTitleValue)
+```
+
+## Final
+
+```html
+<template>
+  <h1>Composition API</h1>
+</template>
+
+<script>
+const faunadb = require('faunadb');
+
+export const client = new faunadb.Client({ secret: 'FAUNA_KEY' })
+
+const { Get, Ref, Collection } = faunadb.query;
+
+import { ref } from 'vue'
+
+export default {
+  setup() {
+    const faunaResponse = client.query(
+      Get(
+        Ref(
+          Collection('Post'), '282918878459200013'
+        )
+      )
+    )
+    console.log("faunaResponse: ", '\n', '\n', faunaResponse)
+
+    const postTitle = faunaResponse.then(res => res.data.title)
+    console.log("postTitle: ", '\n', '\n', postTitle)
+
+    const postTitleRef = ref(postTitle)
+    console.log("postTitleRef: ", '\n', '\n', postTitleRef)
+
+    const postTitleValue = postTitleRef.value
+    console.log("postTitleValue: ", '\n', '\n', postTitleValue)
+  }
+}
+</script>
+```
+
+
+
 # vue3-todo with pictures
 
 This project is based on the excellent video [Intro to Vue 3 + Composition API: Build a Todo App](https://www.youtube.com/watch?v=rncY1tlWShM) by [Coding Garden with CJ](https://www.youtube.com/channel/UCLNgu_OupwoeESgtab33CCw).
