@@ -7,6 +7,7 @@ This project is based on the excellent video [Intro to Vue 3 + Composition API: 
 ```
 vue create vue3-todo
 cd vue3-todo
+code .
 yarn serve
 ```
 
